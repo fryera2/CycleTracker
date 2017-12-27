@@ -1,0 +1,2 @@
+class CycleTrackerController < ApplicationController
+end
