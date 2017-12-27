@@ -9,8 +9,12 @@ class BikesController < ApplicationController
     redirect_to @bike
   end
 
+  def show
+
+  end
+
   private
   def bike_params
-    params.require(:bike).permit(:title)
+    params.require(:bike).permit(:BikeName)
   end
 end
