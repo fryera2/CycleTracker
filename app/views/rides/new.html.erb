@@ -1,1 +1,42 @@
-<h1>rides</h1>
+<%= form_with scope: :ride, url: rides_path, local: true do |form| %>
+  <p>
+    <% options = options_from_collection_for_select(@bikeList, 'BikeID', 'BikeName') %>
+    <%= form.label :'Bike' %>
+    <%= form.select :BikeID, options %>
+  </p>
+
+
+  <p>
+    <%= form.label :'Ride Date' %><br>
+    <%= datepicker_input form, :RideDate%>
+  </p>
+
+  <p>
+    <%= form.label :'Distance in Miles' %><br>
+    <%= form.number_field :DistanceInMiles, step: :any %>
+  </p>
+
+  <p>
+    <%= form.label :'Distance in Km' %><br>
+    <%= form.number_field :DistanceInKm, step: :any %>
+  </p>
+
+  <p>
+    <%= form.label :'Time in minutes' %><br>
+    <%= form.number_field :TimeInMinutes, step: :any %>
+  </p>
+
+  <p>
+    <%= form.label :'Time in Hours' %><br>
+    <%= form.number_field :TimeInHours, step: :any %>
+  </p>
+
+  <p>
+    <%= form.label :'Ascent' %><br>
+    <%= form.number_field :Ascent %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
